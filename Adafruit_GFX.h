@@ -82,6 +82,8 @@ class Adafruit_GFX : public Print {
     drawGrayscaleBitmap(int16_t x, int16_t y,
       const uint8_t bitmap[], const uint8_t mask[],
       int16_t w, int16_t h),
+    drawMyPentagram(int16_t ox, int16_t oy,
+    int16_t r, uint16_t color),
     drawGrayscaleBitmap(int16_t x, int16_t y,
       uint8_t *bitmap, uint8_t *mask, int16_t w, int16_t h),
     drawRGBBitmap(int16_t x, int16_t y, const uint16_t bitmap[],

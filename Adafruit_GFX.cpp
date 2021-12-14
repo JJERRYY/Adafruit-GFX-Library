@@ -1388,5 +1388,26 @@ void GFXcanvas16::fillScreen(uint16_t color) {
         }
     }
 }
+void Adafruit_GFX::drawMyPentagram(int16_t ox, int16_t oy,
+    int16_t r, uint16_t color) {
+    int16_t p1x,p1y,p2x,p2y,p3x,p3y,p4x,p4y,p5x,p5y;
+
+    p1x = ox;
+    p1y = oy + r;
+    p2x = ox - r * cos(18 * PI /180);
+    p2y = oy + r * sin(18 * PI /180);
+    p3x = ox - r * cos(54 * PI /180);
+    p3y = oy - r * sin(54 * PI /180);
+    p4x = ox + r * cos(54 * PI /180);
+    p4y = oy - r * sin(54 * PI /180);
+    p5x = ox + r * cos(18 * PI /180);
+    p5y = oy + r * sin(18 * PI /180);
+
+    drawLine(p1x, p1y, p3x, p3y, color);
+    drawLine(p2x, p2y, p4x, p4y, color);
+    drawLine(p3x, p3y, p5x, p5y, color);
+    drawLine(p1x, p1y, p4x, p4y, color);
+    drawLine(p2x, p2y, p5x, p5y, color);
+}
 
 
